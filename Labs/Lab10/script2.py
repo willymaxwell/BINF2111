@@ -20,7 +20,7 @@ def find_sequence_lengths_and_percentage(sequences):
         total_amino_acids = sum(amino_acid_counts.values())
 
         for acid in amino_acids_to_count:
-            percentage = (amino_acid_counts[acid] / total_amino_acids) * 100
+            percentage = (amino_acid_counts[acid] / total_amino_acids+1) * 100
             print(f"Percentage of {acid}: {percentage:.2f}%")
 
         print("\n")

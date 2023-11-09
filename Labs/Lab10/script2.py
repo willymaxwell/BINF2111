@@ -8,7 +8,7 @@ def load_fasta_file(file_path):
     sequences = list(SeqIO.parse(file_path, "fasta"))
     return sequences
 
-def find_sequence_lengths_and_percentage(sequences):
+find_sequence_lengths_and_percentage(sequences):
     """Find the length of each sequence and the percentage of specified amino acids."""
     amino_acids_to_count = ['M', 'L', 'R', 'Y']
 
@@ -19,9 +19,12 @@ def find_sequence_lengths_and_percentage(sequences):
         amino_acid_counts = {acid: sequence.seq.count(acid) for acid in amino_acids_to_count}
         total_amino_acids = sum(amino_acid_counts.values())
 
-        for acid in amino_acids_to_count:
-            percentage = (amino_acid_counts[acid] / total_amino_acids+1) * 100
-            print(f"Percentage of {acid}: {percentage:.2f}%")
+        if total_amino_acids != 0:
+            for acid in amino_acids_to_count:
+                percentage = (amino_acid_counts[acid] / total_amino_acids) * 100
+                print(f"Percentage of {acid}: {percentage:.2f}%")
+        else:
+            print("No amino acids found in the sequence.")
 
         print("\n")
 

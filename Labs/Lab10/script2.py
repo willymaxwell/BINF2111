@@ -7,8 +7,8 @@ def load_fasta_file(file_path):
     """Load a given fasta file."""
     sequences = list(SeqIO.parse(file_path, "fasta"))
     return sequences
-
-find_sequence_lengths_and_percentage(sequences):
+    
+def find_sequence_lengths_and_percentage(sequences):
     """Find the length of each sequence and the percentage of specified amino acids."""
     amino_acids_to_count = ['M', 'L', 'R', 'Y']
 

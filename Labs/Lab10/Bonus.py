@@ -1,4 +1,5 @@
 #!/usr/bin/env/python3
+from Bio import SeqIO
 
 def calculate_gc_content(sequence):
     """Calculate the GC content of a DNA sequence."""
